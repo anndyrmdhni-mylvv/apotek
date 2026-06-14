@@ -1,13 +1,13 @@
-<div class="bg-white shadow-sm p-3 rounded mb-4 d-flex justify-content-between">
+<div class="top-navbar">
 
-    <h4 class="fw-bold text-success">
-        Dashboard
+    <h4>
+        <i class="bi bi-grid-1x2-fill me-2 text-success"></i>
+        @yield('page-title', 'Dashboard')
     </h4>
 
-    <div>
-        <span class="fw-semibold">
-            Admin NindyaFarma
-        </span>
+    <div class="user-badge">
+        <i class="bi bi-person-circle"></i>
+        Admin NindyaFarma
     </div>
 
 </div>

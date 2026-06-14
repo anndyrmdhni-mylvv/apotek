@@ -35,15 +35,17 @@ class ObatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kategori_id' => 'required',
-            'supplier_id' => 'required',
+            'kategori_id' => 'required|exists:kategoris,id',
+            'supplier_id' => 'required|exists:suppliers,id',
             'nama_obat' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
-            'expired' => 'required'
+            'stok' => 'required|integer|min:0',
+            'harga' => 'required|numeric|min:0',
+            'expired' => 'required|date'
         ]);
 
-        Obat::create($request->all());
+        Obat::create($request->only([
+            'kategori_id', 'supplier_id', 'nama_obat', 'stok', 'harga', 'expired'
+        ]));
 
         return redirect('/obat')
                 ->with('success', 'Obat berhasil ditambahkan');
@@ -60,20 +62,22 @@ class ObatController extends Controller
             compact('obat', 'kategori', 'supplier'));
     }
 
-    public function update(Request $request,int  $id)
+    public function update(Request $request, int $id)
     {
         $request->validate([
-            'kategori_id' => 'required',
-            'supplier_id' => 'required',
+            'kategori_id' => 'required|exists:kategoris,id',
+            'supplier_id' => 'required|exists:suppliers,id',
             'nama_obat' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
-            'expired' => 'required'
+            'stok' => 'required|integer|min:0',
+            'harga' => 'required|numeric|min:0',
+            'expired' => 'required|date'
         ]);
 
-        $obat = Obat::findOrFail( $id);
+        $obat = Obat::findOrFail($id);
 
-        $obat->update($request->all());
+        $obat->update($request->only([
+            'kategori_id', 'supplier_id', 'nama_obat', 'stok', 'harga', 'expired'
+        ]));
 
         return redirect('/obat')
                 ->with('success', 'Obat berhasil diupdate');

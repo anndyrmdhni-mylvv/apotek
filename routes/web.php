@@ -13,7 +13,7 @@ Route::get('/login', [LoginController::class, 'login']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware('authcustom')->group(function () {
 

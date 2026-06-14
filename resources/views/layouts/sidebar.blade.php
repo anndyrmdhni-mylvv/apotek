@@ -1,6 +1,6 @@
 <div class="sidebar p-3">
 
-    <h3 class="text-white fw-bold mb-4">
+    <h3 class="text-white fw-bold mb-4 d-flex align-items-center gap-2" style="position:relative; z-index:1;">
         <i class="bi bi-capsule-pill"></i>
         NindyaFarma
     </h3>
@@ -35,7 +35,9 @@
         Transaksi
     </a>
 
-    <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal" class="mt-auto btn btn-danger text-white text-start py-2 px-3 rounded shadow-sm">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal"
+       class="mt-auto text-white text-start py-2 px-3 rounded-3"
+       style="background: rgba(220,53,69,0.85); position:relative; z-index:1;">
         <i class="bi bi-box-arrow-right"></i>
         Logout
     </a>
