@@ -28,7 +28,8 @@
 
     @endif
 
-    <table class="table table-bordered table-hover">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover mb-0">
 
         <thead class="table-success">
 
@@ -48,7 +49,7 @@
 
             <tr>
 
-                <td>{{ $loop->iteration }}</td>
+                <td>{{ $transaksi->firstItem() + $loop->index }}</td>
 
                 <td>{{ $item->pelanggan->nama }}</td>
 
@@ -88,7 +89,12 @@
 
         </tbody>
 
-    </table>
+        </table>
+    </div>
+
+    <div class="mt-4">
+        {{ $transaksi->links() }}
+    </div>
 
 </div>
 

@@ -13,7 +13,7 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::with('pelanggan')->get();
+        $transaksi = Transaksi::with('pelanggan')->paginate(10);
 
         return view('transaksi.index', compact('transaksi'));
     }

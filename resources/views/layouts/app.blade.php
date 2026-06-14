@@ -302,6 +302,25 @@
             margin-bottom: 6px;
         }
 
+        /* ── Pagination ── */
+        .pagination {
+            --bs-pagination-color: var(--accent);
+            --bs-pagination-bg: #fff;
+            --bs-pagination-border-color: var(--border-color);
+            --bs-pagination-hover-color: #146c43;
+            --bs-pagination-hover-bg: #e9ecef;
+            --bs-pagination-hover-border-color: #dee2e6;
+            --bs-pagination-focus-color: #146c43;
+            --bs-pagination-focus-bg: #e9ecef;
+            --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+            --bs-pagination-active-color: #fff;
+            --bs-pagination-active-bg: var(--accent);
+            --bs-pagination-active-border-color: var(--accent);
+            --bs-pagination-disabled-color: #6c757d;
+            --bs-pagination-disabled-bg: #fff;
+            --bs-pagination-disabled-border-color: var(--border-color);
+        }
+
         /* ── Modal ── */
         .modal-content {
             border-radius: 20px;

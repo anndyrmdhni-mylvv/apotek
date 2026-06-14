@@ -11,7 +11,7 @@ class ObatController extends Controller
 {
     public function index()
     {
-        $obat = Obat::with('kategori', 'supplier')->get();
+        $obat = Obat::with('kategori', 'supplier')->paginate(10);
 
         return view('obat.index', compact('obat'));
     }
