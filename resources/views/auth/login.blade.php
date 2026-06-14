@@ -469,7 +469,7 @@
         <div class="login-form-panel">
 
             <div class="form-header">
-                <h2>Selamat Datang! 👋</h2>
+                <h2>Selamat Datang!</h2>
                 <p>Masukkan kredensial untuk mengakses dashboard.</p>
             </div>
 
