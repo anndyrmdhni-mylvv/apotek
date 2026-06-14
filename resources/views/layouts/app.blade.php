@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,16 +38,26 @@
             margin: 0;
         }
 
-        /* ── Sidebar ── */
+        /* ── Perbaikan Layout Utama ── */
+        .wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* ── Sidebar (Fixed/Sticky) ── */
         .sidebar {
             width: 260px;
-            min-height: 100vh;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
             background: linear-gradient(180deg, var(--sidebar-top) 0%, var(--sidebar-bottom) 100%);
             display: flex;
             flex-direction: column;
             box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            z-index: 1000;
         }
 
         /* decorative circles */
@@ -109,9 +118,10 @@
             text-align: center;
         }
 
-        /* ── Main Content ── */
+        /* ── Main Content Container ── */
         .content {
             flex-grow: 1;
+            margin-left: 260px; /* Menghindari konten tertutup sidebar */
             padding: 24px 28px;
             min-height: 100vh;
         }
@@ -310,7 +320,7 @@
 </head>
 <body>
 
-<div class="d-flex">
+<div class="wrapper">
 
     @include('layouts.sidebar')
 
@@ -324,7 +334,6 @@
 
 </div>
 
-<!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg p-2">
@@ -345,7 +354,6 @@
     </div>
 </div>
 
-<!-- Logout Confirmation Modal -->
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow-lg p-2">
