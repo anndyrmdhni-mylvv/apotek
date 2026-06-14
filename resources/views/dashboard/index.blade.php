@@ -73,7 +73,7 @@
 <div class="card mt-4 p-4 shadow">
 
     <h3 class="fw-bold text-success">
-        Selamat Datang di NindyaFarma 💊
+        Selamat Datang di NindyaFarma 
     </h3>
 
     <p>
